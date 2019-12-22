@@ -21,8 +21,6 @@ class Salon:
             if car.id == id:
                 return car
 
-    def add_car(self, car):
-        self.cars.append(car)
 
     def add_car(self, name, speed):
         max_id = 0

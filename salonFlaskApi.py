@@ -20,14 +20,14 @@ def get_car_by_name(name):
         return jsonify(error="There is no car with name: " + name)
 
 
-@app.route('/addcar', methods=['POST'])
+@app.route('/addCar', methods=['POST'])
 def add_car():
     name = request.get_json().get("name")
     speed = request.get_json().get("speed")
     return jsonify(car=salon.add_car(name, speed).serialize)
 
 
-@app.route('/updatecar', methods=['PUT'])
+@app.route('/updateCar', methods=['PUT'])
 def update_car():
     id = request.get_json().get("id")
     name = request.get_json().get("name")
@@ -39,7 +39,7 @@ def update_car():
         return jsonify(error="There is no car with id: " + str(id))
 
 
-@app.route('/deletecar/<int:id>', methods=['DELETE'])
+@app.route('/deleteCar/<int:id>', methods=['DELETE'])
 def delete_car(id):
     is_deleted = salon.delete_car_by_id(id)
     if is_deleted:
