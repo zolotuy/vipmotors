@@ -1,1 +1,1 @@
-web: gunicorn vipmotors:app
+web: gunicorn salonFlaskApi:app
